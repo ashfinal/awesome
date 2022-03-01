@@ -1,0 +1,13 @@
+{
+    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+    "runtime.version": "Lua 5.3",
+    "runtime.path": "/usr/share/awesome/lib",
+    "Lua.diagnostics.globals": [
+        "awesome",
+        "root",
+        "client",
+        "mouse",
+        "screen",
+        "tag"
+    ]
+}
