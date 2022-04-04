@@ -95,10 +95,10 @@ awful.spawn.with_shell(
 -- {{{ Variable definitions
 
 local themes = {
-    "multicolor",		-- 1
-    "powerarrow",      		-- 2
-    "powerarrow-blue",	 	-- 3
-    "blackburn",		-- 4
+    "multicolor",       -- 1
+    "powerarrow",           -- 2
+    "powerarrow-blue",      -- 3
+    "blackburn",        -- 4
     "copland",        -- 5
 }
 
@@ -881,15 +881,15 @@ awful.rules.rules = {
 
           -- Floating clients but centered in screen
     { rule_any = {
-       	class = {
-       		"Polkit-gnome-authentication-agent-1",
-			"Arcolinux-calamares-tool.py"
-				},
-				},
-      	properties = { floating = true },
-	      	callback = function (c)
-    		  awful.placement.centered(c,nil)
-       		end }
+        class = {
+            "Polkit-gnome-authentication-agent-1",
+            "Arcolinux-calamares-tool.py"
+                },
+                },
+        properties = { floating = true },
+            callback = function (c)
+              awful.placement.centered(c,nil)
+            end }
 }
 -- }}}
 
