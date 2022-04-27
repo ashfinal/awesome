@@ -574,23 +574,21 @@ globalkeys = my_table.join(
               {description = "-10%", group = "awesome"}),
 
     -- ALSA volume control
-    --awful.key({ "Control" }, "Up",
-    --awful.key({ }, "XF86AudioRaiseVolume",
-    --    function ()
-    --        os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
-    --        beautiful.volume.update()
-    --    end),
-    --awful.key({ "Control" }, "Down",
-    --awful.key({ }, "XF86AudioLowerVolume",
-    --    function ()
-    --        os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
-    --        beautiful.volume.update()
-    --    end),
-    --awful.key({ }, "XF86AudioMute",
-    --    function ()
-    --        os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
-    --        beautiful.volume.update()
-    --    end),
+    awful.key({ }, "XF86AudioRaiseVolume",
+        function ()
+            os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
+            beautiful.volume.update()
+        end),
+    awful.key({ }, "XF86AudioLowerVolume",
+        function ()
+            os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
+            beautiful.volume.update()
+        end),
+    awful.key({ }, "XF86AudioMute",
+        function ()
+            os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+            beautiful.volume.update()
+        end),
     -- awful.key({ "Control", "Shift" }, "m",
     --     function ()
     --         os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))

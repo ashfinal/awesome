@@ -190,30 +190,32 @@ local cpu = lain.widget.cpu({
 --})
 
 -- Battery
---local baticon = wibox.widget.imagebox(theme.widget_batt)
---local bat = lain.widget.bat({
---    settings = function()
---        local perc = bat_now.perc ~= "N/A" and bat_now.perc .. "%" or bat_now.perc
---
---        if bat_now.ac_status == 1 then
---            perc = perc .. " plug"
---        end
---
---        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, perc .. " "))
---    end
---})
+local baticon = wibox.widget.imagebox(theme.widget_batt)
+local bat = lain.widget.bat({
+   settings = function()
+       local perc = bat_now.perc ~= "N/A" and bat_now.perc .. "%" or bat_now.perc
+
+       if bat_now.ac_status == 1 then
+           perc = perc .. " 〶"
+       end
+
+       widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, perc .. " "))
+   end
+})
 
 -- ALSA volume
---local volicon = wibox.widget.imagebox(theme.widget_vol)
---theme.volume = lain.widget.alsa({
---    settings = function()
---        if volume_now.status == "off" then
---            volume_now.level = volume_now.level .. "M"
---        end
---
---        widget:set_markup(markup.fontfg(theme.font, "#7493d2", volume_now.level .. "% "))
---    end
---})
+local volicon = wibox.widget.imagebox(theme.widget_vol)
+theme.volume = lain.widget.alsa({
+   settings = function()
+       local level = volume_now.level .. "%"
+
+       if volume_now.status == "off" then
+           level = level .. " 🄼"
+       end
+
+       widget:set_markup(markup.fontfg(theme.font, "#7493d2", level .. " "))
+   end
+})
 
 -- Net
 local netdownicon = wibox.widget.imagebox(theme.widget_netdown)
@@ -346,8 +348,8 @@ function theme.at_screen_connect(s)
             netdowninfo,
             netupicon,
             netupinfo.widget,
-            -- volicon,
-            -- theme.volume.widget,
+            volicon,
+            theme.volume.widget,
             memicon,
             memory.widget,
             cpuicon,
@@ -356,8 +358,8 @@ function theme.at_screen_connect(s)
             --theme.weather.widget,
             --tempicon,
             --temp.widget,
-            --baticon,
-            --bat.widget,
+            baticon,
+            bat.widget,
             clockicon,
             mytextclock,
             wibox.widget.systray(),

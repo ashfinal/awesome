@@ -15,16 +15,16 @@ run nm-applet
 #run pamac-tray
 #run variety
 #run xfce4-power-manager
-run cbatticon
+# run cbatticon
 #run blueberry-tray
 run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #run numlockx on
-run volumeicon
+# run volumeicon
 run fcitx5
 #run nitrogen --restore
 #run conky -c /home/ashfinal/.config/conky/Arco-Redux-LUA.conkyrc
 #you can set wallpapers in themes as well
-feh --bg-fill /usr/share/backgrounds/arcolinux/mystery-3840x2160.jpg &
+feh --bg-fill /usr/share/backgrounds/arcolinux/mystery-3840x2160.jpg
 #run applications from startup
 #run firefox
 #run atom
