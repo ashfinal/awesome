@@ -479,7 +479,7 @@ globalkeys = my_table.join(
 
     awful.key({ modkey,           }, "`", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
-    awful.key({ "Control",           }, "Tab",
+    awful.key({ altkey,           }, "Tab",
         function ()
             awful.client.focus.history.previous()
             if client.focus then
