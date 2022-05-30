@@ -296,7 +296,7 @@ globalkeys = my_table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = terminal, group = "awesome"}),
-    awful.key({ modkey, "Shift" }, "r", awesome.restart,
+    awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     -- awful.key({ modkey, "Shift"   }, "x", awesome.quit,
     --          {description = "quit awesome", group = "awesome"}),
@@ -661,18 +661,19 @@ globalkeys = my_table.join(
 
     -- Default
     awful.key({ modkey, "Shift" }, "m", function() menubar.show() end,
-              {description = "show the menubar", group = "awesome"})
+              {description = "show the menubar", group = "awesome"}),
 
-    --awful.key({ modkey, "Shift" }, "r",
-    --          function ()
-    --              awful.prompt.run {
-    --                prompt       = "Run Lua code: ",
-    --                textbox      = awful.screen.focused().mypromptbox.widget,
-    --                exe_callback = awful.util.eval,
-    --                history_path = awful.util.get_cache_dir() .. "/history_eval"
-    --              }
-    --          end,
-    --          {description = "lua execute prompt", group = "awesome"})
+    awful.key({ modkey, "Shift" }, "r",
+             function ()
+                 awful.prompt.run {
+                   prompt       = "Run Lua code: ",
+                   textbox      = awful.screen.focused().mypromptbox.widget,
+                   exe_callback = awful.util.eval,
+                   history_path = awful.util.get_cache_dir() .. "/history_eval"
+                 }
+             end,
+             {description = "lua execute prompt", group = "awesome"})
+
 )
 
 clientkeys = my_table.join(
